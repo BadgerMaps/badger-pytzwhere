@@ -20,15 +20,8 @@ import os
 import shapely.geometry as geometry
 import shapely.prepared as prepared
 
-# We can save about 222MB of RAM by turning our polygon lists into
-# numpy arrays rather than tuples, if numpy is installed.
-try:
-    import numpy
-    WRAP = numpy.asarray
-    COLLECTION_TYPE = numpy.ndarray
-except ImportError:
-    WRAP = tuple
-    COLLECTION_TYPE = tuple
+WRAP = tuple
+COLLECTION_TYPE = tuple
 
 # for navigation and pulling values/files
 this_dir, this_filename = os.path.split(__file__)
